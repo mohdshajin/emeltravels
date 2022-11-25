@@ -1,0 +1,874 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+:root {
+  --first-color: #0f1014;
+  --font-color-primary: #131313;
+  --font-color-secondary: #b7b7b7;
+  --font-color-light: #ffffff;
+}
+
+body {
+  background: var(--first-color);
+}
+
+
+
+#myVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* banner */
+
+.untitled {
+  
+  height: 100%;
+  width: 100%;
+  animation: rotateHue infinite 20s linear;
+  animation-delay: 0.625s;
+}
+/* @keyframes rotateHue {
+  0% {
+      filter: hue-rotate(0deg);
+ }
+  20% {
+      filter: hue-rotate(0deg);
+ }
+  25% {
+      filter: hue-rotate(90deg);
+ }
+  45% {
+      filter: hue-rotate(90deg);
+ }
+  50% {
+      filter: hue-rotate(180deg);
+ }
+  70% {
+      filter: hue-rotate(180deg);
+ }
+  75% {
+      filter: hue-rotate(270deg);
+ }
+  95% {
+      filter: hue-rotate(270deg);
+ }
+  100% {
+      filter: hue-rotate(360deg);
+ }
+} */
+.untitled__shutters {
+  position: absolute;
+  height: 150vmax;
+  width: 150vmax;
+  left: calc(50% - 75vmax);
+  top: calc(50% - 75vmax);
+  pointer-events: none;
+  z-index: 2;
+  animation: rotateFrame 10s linear infinite;
+}
+@keyframes rotateFrame {
+  0% {
+      transform: rotate(0deg);
+ }
+  100% {
+      transform: rotate(180deg);
+ }
+}
+.untitled__shutters:before, .untitled__shutters:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  background-color: var(--first-color);
+  pointer-events: auto;
+}
+.untitled__shutters:before {
+  bottom: 50%;
+  animation: openTop 5s infinite;
+}
+@keyframes openTop {
+  0% {
+      transform: translate3d(-50%, 0, 0);
+      animation-timing-function: cubic-bezier(0.8, 0, 0.1, 1);
+ }
+  40% {
+      transform: translate3d(-50%, -65vmax, 0);
+      animation-timing-functon: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+ }
+  70% {
+      transform: translate3d(-50%, -65vmax, 0);
+      animation-timing-functon: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+ }
+  100% {
+      transform: translate3d(-50%, 0, 0);
+      animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+ }
+}
+.untitled__shutters:after {
+  top: 50%;
+  animation: openBottom 5s infinite;
+}
+@keyframes openBottom {
+  0% {
+      transform: translate3d(-50%, 0, 0);
+      animation-timing-function: cubic-bezier(0.8, 0, 0.1, 1);
+ }
+  40% {
+      transform: translate3d(-50%, 65vmax, 0);
+      animation-timing-functon: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+ }
+  70% {
+      transform: translate3d(-50%, 65vmax, 0);
+      animation-timing-functon: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+ }
+  100% {
+      transform: translate3d(-50%, 0, 0);
+      animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+ }
+}
+.untitled__slides {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+}
+.untitled__slide {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  animation: showHideSlide infinite 20s steps(1);
+}
+@keyframes showHideSlide {
+  0% {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 1;
+ }
+  25% {
+      opacity: 0;
+      pointer-events: none;
+      z-index: -1;
+ }
+  100% {
+      opacity: 0;
+      pointer-events: none;
+      z-index: -1;
+ }
+}
+.untitled__slide:nth-child(1) {
+  animation-delay: 0s;
+}
+.untitled__slide:nth-child(1) .untitled__slideBg {
+  background-image: url(/assets/img/1073764.jpg);
+}
+.untitled__slide:nth-child(2) {
+  animation-delay: 5s;
+}
+.untitled__slide:nth-child(2) .untitled__slideBg {
+  background-image: url(/assets/img/azerbaijan.jpg);
+}
+.untitled__slide:nth-child(3) {
+  animation-delay: 10s;
+}
+.untitled__slide:nth-child(3) .untitled__slideBg {
+  background-image: url(/assets/img/thailand-3840x2160-5k-4k-wallpaper-8k-pattaya-beach-ocean-mountains-452.jpg);
+}
+.untitled__slide:nth-child(4) {
+  animation-delay: 15s;
+}
+.untitled__slide:nth-child(4) .untitled__slideBg {
+  background-image: url(/assets/img/indonesia.jpg);
+}
+.untitled__slideBg {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  z-index: -1;
+  animation: bgInOut 5s infinite;
+}
+@keyframes bgInOut {
+  0% {
+      transform: rotate(-45deg) scale(1.1);
+      animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+ }
+  33% {
+      transform: rotate(0deg);
+ }
+  50% {
+      transform: rotate(0deg);
+ }
+  66% {
+      transform: rotate(0deg);
+      animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+ }
+  100% {
+      transform: rotate(45deg) scale(0.9);
+ }
+}
+.untitled__slideContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  color: white;
+  font-family: 'Abril Fatface', sans-serif;
+  line-height: 0.8;
+  letter-spacing: -0.025em;
+  z-index: 2;
+  opacity: 1;
+  mix-blend-mode:normal;
+}
+.untitled__slideContent span {
+  display: block;
+  font-size: 15vmin;
+  background-color: rgba(28, 28, 28, 0.518);
+  padding: 30px;
+}
+.button {
+  font-family: 'Roboto Mono', sans-serif;
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 2vmin;
+  display: inline-block;
+  position: relative;
+  border: 3px solid white;
+  box-shadow: -0.5vmin 0.5vmin 0 rgba(255, 255, 255, 0.5);
+  background: transparent;
+  margin-top: 5vmin;
+  mix-blend-mode: lighten;
+  color: white;
+  padding: 2vmin 2vmin 1.8vmin 2vmin;
+  letter-spacing: 0.1em;
+  text-shadow: none;
+  line-height: 1;
+  transform: translate3d(0.5vmin, -0.5vmin, 0);
+  transition: all 100ms linear;
+}
+.button:hover {
+  transform: translate3d(1vmin, -1vmin, 0);
+  box-shadow: -1vmin 1vmin 0 rgba(255, 255, 255, 0.5);
+  background: white;
+  color: black;
+}
+.button:active {
+  transform: translate3d(0px, 0px, 0);
+  box-shadow: 0px 0px 0 rgba(255, 255, 255, 0.5);
+}
+
+
+/* banner */
+
+.container {
+  width: 85%;
+  height: 100%;
+  
+
+}
+
+.flex {
+  display: flex;
+  gap: 50px;
+}
+
+.navbar {
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+    transform: translate(-50%, 0);
+  width: 85%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(5, 5, 5, 0.473);
+  padding: 0 200px;
+}
+
+.mobilenavbar{
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 110vh;
+  top: 0;
+  position: fixed;
+  z-index: 1000;
+  background: rgb(0, 0, 0);
+}
+
+.mobilenavbar ul{
+  list-style: none;
+  padding: 0;
+  font-size: 30px;
+}
+.mobilenavbar a{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.close{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+
+
+.logo {
+  height: 70px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav a {
+  color: var(--font-color-light);
+  text-decoration: none;
+}
+
+/* Destinations */
+
+.destinations {
+  margin: 100px 0;
+  display: flex;
+  justify-content: center;
+  color: var(--font-color-light);
+}
+
+.heading {
+  font-size: 30px;
+  width: 100%;
+}
+
+.heading h2 {
+  margin-top: 0;
+}
+
+.description {
+  width: 100%;
+}
+
+.destination img {
+  width: 100%; /* or any custom size */
+  height: 100%;
+  object-fit: contain;
+}
+
+.destination-grid {
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  color: var(--font-color-light);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.destination h2 {
+  margin: 10px 0;
+}
+
+.destination p {
+  margin: 10px 0;
+  font-size: 13px;
+  color: var(--font-color-secondary);
+}
+
+/* Itinerary */
+
+.itinerary {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 60vh;
+  background: #1d1d1d;
+}
+
+.itinerary-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.itinerary-content h2 {
+  font-size: 30px;
+  color: var(--font-color-light);
+}
+
+.itinerary-content p {
+  font-weight: lighter;
+  color: var(--font-color-secondary);
+}
+
+.itinerary-content button {
+  width: 150px;
+  padding: 10px;
+}
+
+#package-btn{
+  background: var(--first-color);
+  color: white;
+  border: none;
+}
+
+button{
+  background: var(--first-color);
+  color: white;
+  border: none;
+}
+
+.daybyday {
+  width: 50%;
+  color: var(--font-color-light);
+  overflow: scroll;
+}
+
+.daybyday::-webkit-scrollbar {
+  display: none;
+}
+
+.days {
+  margin: 30px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: var(--font-color-primary);
+}
+
+.days p {
+  font-weight: lighter;
+  font-size: 15px;
+  color: var(--font-color-secondary);
+}
+
+.days:hover {
+  background-color: rgb(2, 117, 27);
+}
+
+/* Faq */
+
+.faqs {
+    margin: 100px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: var(--font-color-light);
+}
+
+.faqs h3{
+    font-size: 15px;
+}
+
+.faq {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+}
+
+.faq a{
+    color: var(--font-color-light);
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hr-line {
+  width: 100%;
+  margin: auto;
+}
+
+/* Style the buttons that are used to open and close the faq-page body */
+.faq-page {
+  /* background-color: #eee; */
+  color: var(--font-color-secondary);
+  cursor: pointer;
+  padding: 30px 20px;
+  width: 100%;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  margin: auto;
+}
+
+.faq-body {
+  margin: auto;
+  /* text-align: center; */
+  width: 100%;
+  margin: 30px 0;
+  padding: auto;
+  font-weight: lighter;
+  font-size: 14px;
+}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.faq-page:hover {
+  background-color: #f9f9f9;
+}
+/* Style the faq-page panel. Note: hidden by default */
+.faq-body {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+}
+.faq-page:after {
+  content: "\02795";
+  /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+.active:after {
+  content: "\2796";
+}
+
+
+.faq-images{
+    width: 50%;
+    height: 100%;
+}
+
+.faq-images img{
+    width: 100%; /* or any custom size */
+    height: 100%;
+    object-fit: contain;
+
+}
+
+/* Packages */
+
+.packages{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--font-color-light);
+}
+
+.package-grid{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.package{
+    background-color: rgb(255, 255, 255);
+    height: 70vh;
+    text-shadow: 2px 2px 50px #000000;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.package:hover{
+  background: #1d1d1d;
+  text-shadow: none;
+}
+
+.package-one{
+  background: url(/assets/img/Georgia/georgia.jpg);
+  background-size: cover;
+}
+
+.package-two{
+  background: url(/assets/img/India/India.jpg);
+  background-size: cover;
+}
+
+.package-three{
+  background: url(/assets/img/saudi/saudi.jpeg);
+  background-size: cover;
+}
+
+.star{
+    background: white;
+    color: var(--first-color);
+    width: 50px;
+    border-radius: 50px;
+    padding: 5px 10px;
+}
+
+
+
+/* Footer */
+
+footer{
+    width: 100%;
+    background: linear-gradient(to right,#1d1d1d,#1d1d1d);
+    color: var(--font-color-secondary);
+    padding: 100px 0 30px;
+    font-size: 15px;
+    line-height: 20px;margin-top: 100px;
+}
+
+footer h3{
+    margin-bottom: 20px;
+}
+
+footer ul{
+    list-style: none;
+    padding: 0;
+    list-style-type: none;
+}
+footer ul li{
+    list-style: none;
+    margin-bottom: 10px;
+
+}
+
+footer ul li a{
+    text-decoration: none;
+    color: var(--font-color-light);
+}
+
+.row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+form{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+
+}
+
+form .far{
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+form input{
+    width: 100%;
+    background: transparent;
+    color: var(--font-color-light);
+    border: 0;
+    outline: 0;
+}
+
+form button{
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+form button .fas{
+    font-size: 16px;
+    color: var(--font-color-light);
+}
+
+
+.social-icons .fab{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: black;
+    background: var(--font-color-light);
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+    margin-top: 50px;
+}
+
+.copyright{
+    text-align: center;
+}
+
+.copyright a{
+    text-decoration: none;
+    color: var(--font-color-light);
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 480px){
+
+  .logo {
+    height: 30px;
+}
+
+
+  
+ 
+
+
+  .description{
+    display: none;
+  }
+
+  .grid{
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  .destination-grid{
+    height: fit-content;
+  }
+
+  .itinerary{
+    height: fit-content;
+  }
+
+  .flex{
+    flex-direction: column;
+    
+  }
+
+  .itinerary-content{
+    width: 100%;
+  }
+
+  .daybyday{
+    width: 100%;
+  }
+
+  .faq{
+    width: 100%;
+  }
+
+  .faq-images{
+    display: none;
+  }
+
+  .package-grid{
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  .nav-menu li{
+    display: none;
+  }
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+
+  .logo {
+    height: 45px;
+}
+
+    
+
+  .description{
+    display: none;
+  }
+
+  .grid{
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  .destination-grid{
+    height: fit-content;
+  }
+
+  .itinerary{
+    height: fit-content;
+  }
+
+  .flex{
+    flex-direction: column;
+    
+  }
+
+  .itinerary-content{
+    width: 100%;
+  }
+
+  .daybyday{
+    width: 100%;
+  }
+
+  .faq{
+    width: 100%;
+  }
+
+  .faq-images{
+    display: none;
+  }
+
+  .package-grid{
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  .nav-menu li{
+    display: none;
+  }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+
+  .itinerary{
+    height: fit-content;
+  }
+
+  .package-grid{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px){
+}
+
+
