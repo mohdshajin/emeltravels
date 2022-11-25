@@ -750,7 +750,7 @@ hr{
 @media screen and (min-width: 320px) and (max-width: 480px){
 
   .logo {
-    height: 30px;
+    height: 32px;
 }
 
 
@@ -801,6 +801,10 @@ hr{
 
   .nav-menu li{
     display: none;
+  }
+
+  ul img{
+    width: 25px;
   }
 
 }
