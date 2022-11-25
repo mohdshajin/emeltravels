@@ -184,6 +184,7 @@ footer ul li a {
 .row {
   width: 85%;
   margin: auto;
+  gap: 30px;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;

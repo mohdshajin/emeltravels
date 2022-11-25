@@ -182,25 +182,25 @@ body {
   animation-delay: 0s;
 }
 .untitled__slide:nth-child(1) .untitled__slideBg {
-  background-image: url(/assets/img/1073764.jpg);
+  background-image: url(/assets/img/1073764.webp);
 }
 .untitled__slide:nth-child(2) {
   animation-delay: 5s;
 }
 .untitled__slide:nth-child(2) .untitled__slideBg {
-  background-image: url(/assets/img/azerbaijan.jpg);
+  background-image: url(/assets/img/azerbaijan.webp);
 }
 .untitled__slide:nth-child(3) {
   animation-delay: 10s;
 }
 .untitled__slide:nth-child(3) .untitled__slideBg {
-  background-image: url(/assets/img/thailand-3840x2160-5k-4k-wallpaper-8k-pattaya-beach-ocean-mountains-452.jpg);
+  background-image: url(/assets/img/thailand-3840x2160-5k-4k-wallpaper-8k-pattaya-beach-ocean-mountains-452.webp);
 }
 .untitled__slide:nth-child(4) {
   animation-delay: 15s;
 }
 .untitled__slide:nth-child(4) .untitled__slideBg {
-  background-image: url(/assets/img/indonesia.jpg);
+  background-image: url(/assets/img/indonesia.webp);
 }
 .untitled__slideBg {
   position: relative;
@@ -379,6 +379,7 @@ nav a {
 
 .description {
   width: 100%;
+
 }
 
 .destination img {
@@ -414,6 +415,7 @@ nav a {
 /* Itinerary */
 
 .itinerary {
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -613,17 +615,17 @@ button{
 }
 
 .package-one{
-  background: url(/assets/img/Georgia/georgia.jpg);
+  background: url(/assets/img/Georgia/Georgia.webp);
   background-size: cover;
 }
 
 .package-two{
-  background: url(/assets/img/India/India.jpg);
+  background: url(/assets/img/India/India.webp);
   background-size: cover;
 }
 
 .package-three{
-  background: url(/assets/img/saudi/saudi.jpeg);
+  background: url(/assets/img/saudi/saudi.webp);
   background-size: cover;
 }
 
@@ -670,6 +672,7 @@ footer ul li a{
 
 .row{
     width: 85%;
+    gap: 30px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
