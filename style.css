@@ -266,6 +266,7 @@ body {
   mix-blend-mode:normal;
 }
 .untitled__slideContent span {
+  text-align: center;
   display: block;
   font-size: 15vmin;
   background-color: rgba(28, 28, 28, 0.518);
